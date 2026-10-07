@@ -1,1 +1,64 @@
-AWS Practice questions
+# AWS Certified Cloud Practitioner (CLF-C02) Practice Questions
+
+This repository contains AWS Certified Cloud Practitioner (CLF-C02) practice questions designed to help you prepare for the exam.
+
+## Purpose
+
+The goal of this repo is to provide a simple, focused set of practice questions and study material for AWS Cloud Practitioner topics. It is useful for:
+- reviewing core AWS services
+- testing your knowledge before the exam
+- identifying weak areas
+- reinforcing important cloud concepts
+
+## Topics Covered
+
+This repository focuses on key Cloud Practitioner concepts, including:
+- cloud computing fundamentals
+- AWS core services
+- security and compliance
+- billing, pricing, and support
+- cloud architecture and design
+- monitoring, reliability, and scalability
+
+## How to Use This Repository
+
+1. Review the area you want to study.
+2. Attempt the practice questions without looking at the answers.
+3. Check your understanding and review explanations.
+4. Repeat the questions until you feel confident in each topic.
+
+## Suggested Study Approach
+
+- Start with AWS fundamentals and core services
+- Focus on security, pricing, architecture, and support topics
+- Track your weak areas and revisit them regularly
+- Use the questions to reinforce understanding, not just memorization
+
+## Repository Structure
+
+This repository may evolve over time, but it can be organized as follows:
+
+- `questions/` — practice questions
+- `answers/` — answer keys or explanations
+- `notes/` — study notes and summaries
+- `resources/` — links, cheat sheets, and references
+
+## Notes
+
+AWS exam preparation is most effective when you combine:
+- practice questions
+- conceptual review
+- hands-on learning
+- repeated revision
+
+## Contributing
+
+If you would like to improve this repository, feel free to add:
+- new questions
+- explanations
+- study notes
+- references to AWS documentation
+
+## License
+
+This repository is intended for educational and study purposes.

@@ -509,3 +509,166 @@ C. On-Demand Instances
 | **Reserved** | Predictable / long-term commitment |
 | **Spot** | Can tolerate interruption / lowest cost |
 | **Dedicated Host** | Dedicated physical server |
+
+---
+### Question 21 — CLF-C02 Exam Practice
+
+A company runs a web application on several Amazon EC2 instances. During periods of high traffic, some instances become overloaded, while other instances receive very little traffic.
+
+The company wants to distribute incoming requests across healthy instances and automatically add or remove instances based on demand.
+
+Which solution best meets these requirements?
+
+**A.** Use Amazon CloudWatch to distribute traffic and AWS Lambda to add instances.
+
+**B.** Use Elastic Load Balancing (ELB) to distribute traffic and Amazon EC2 Auto Scaling to adjust the number of instances.
+
+**C.** Use Amazon Route 53 to distribute traffic and Amazon S3 to scale the instances.
+
+**D.** Use AWS Lambda to distribute traffic and Amazon ECS to increase the number of EC2 instances.
+
+**Correct answer:** B. Elastic Load Balancing (ELB) + Amazon EC2 Auto Scaling
+
+**Result:** Correct
+
+#### Notes
+
+- **Elastic Load Balancing (ELB):** Distributes incoming traffic across healthy targets, such as EC2 instances.
+- **Amazon EC2 Auto Scaling:** Automatically adds or removes EC2 instances according to configured scaling policies and demand.
+- **Amazon CloudWatch:** Monitors metrics and can trigger alarms. It does not directly distribute application traffic.
+- **Amazon Route 53:** Provides DNS and routing capabilities; it does not create or resize EC2 instances.
+- **Amazon ECS:** Manages containerized applications.
+
+**Exam tip:** ELB distributes traffic; EC2 Auto Scaling adjusts the number of instances. They can work together to improve application availability and scalability.
+
+---
+### Question 22 — CLF-C02 Exam Practice
+
+A company runs an application on Amazon EC2 instances. The application must remain available even if an entire Availability Zone becomes unavailable.
+
+Which solution is the best choice?
+
+**A.** Launch multiple EC2 instances in the same Availability Zone and use vertical scaling.
+
+**B.** Deploy EC2 instances across multiple Availability Zones and use Elastic Load Balancing.
+
+**C.** Store application backups in Amazon S3 in the same Availability Zone.
+
+**D.** Increase the CPU and memory of a single EC2 instance.
+
+**Your answer:** B. Deploy EC2 instances across multiple Availability Zones and use Elastic Load Balancing.
+
+**Correct answer:** B. Deploy EC2 instances across multiple Availability Zones and use Elastic Load Balancing.
+
+**Result:** Correct
+
+#### Notes
+
+- **Availability Zone (AZ):** An isolated location within an AWS Region.
+- **High availability:** Designing an application to remain accessible when a component fails.
+- **Fault tolerance:** Designing a system to continue operating despite failures.
+- **Elastic Load Balancing (ELB):** Distributes traffic across healthy targets.
+- **Multi-AZ deployment:** Reduces dependence on a single Availability Zone.
+
+**Why the other options are incorrect:**
+- **A:** Instances in the same AZ remain vulnerable to an AZ-level outage.
+- **C:** Backups alone do not keep the application running during an outage.
+- **D:** Vertical scaling increases the capacity of one instance but does not protect against its AZ failing.
+
+**Exam tip:** For questions mentioning an entire AZ becoming unavailable, think about deploying resources across multiple AZs.
+
+---
+### Question 23 — CLF-C02 Exam Practice
+
+A company wants to run an application without provisioning or managing servers. The application code should execute only when a file is uploaded to an Amazon S3 bucket, and the company wants to pay for the compute time used.
+
+Which AWS service is the best choice?
+
+**A.** Amazon EC2
+
+**B.** Amazon ECS on Amazon EC2
+
+**C.** AWS Lambda
+
+**D.** Amazon RDS
+
+**Your answer:** C. AWS Lambda
+
+**Correct answer:** C. AWS Lambda
+
+**Result:** Correct
+
+#### Notes
+
+- **AWS Lambda:** Runs code without requiring you to provision or manage servers.
+- **Event-driven execution:** Lambda can run in response to events, including Amazon S3 object uploads.
+- **Pay-per-use:** Charges are based on function requests and execution duration, subject to the applicable pricing model.
+- **Amazon EC2:** Provides virtual servers that you manage.
+- **Amazon ECS on EC2:** Manages containers, but you still manage the underlying EC2 infrastructure.
+- **Amazon RDS:** A managed relational database service, not a general-purpose serverless code execution service.
+
+**Exam tip:** If a question says serverless, event-triggered code, and no server management, consider AWS Lambda.
+
+---
+### Question 24 — CLF-C02 Exam Practice
+
+A company needs to run a batch-processing workload that can be interrupted and restarted later. The company wants to minimize compute costs and can tolerate the workload being interrupted when AWS needs the capacity back.
+
+Which EC2 purchasing option is the most cost-effective choice?
+
+**A.** On-Demand Instances
+
+**B.** Reserved Instances
+
+**C.** Spot Instances
+
+**D.** Dedicated Hosts
+
+**Your answer:** C. Spot Instances
+
+**Correct answer:** C. Spot Instances
+
+**Result:** Correct
+
+#### Notes
+
+- **Spot Instances:** Use spare AWS EC2 capacity at discounted prices. They can be interrupted by AWS.
+- **On-Demand Instances:** Suitable for flexible workloads without long-term commitments.
+- **Reserved Instances:** Offer discounted pricing in exchange for a commitment to a consistent usage pattern, depending on the payment and offering terms.
+- **Dedicated Hosts:** Provide physical servers dedicated to one customer.
+
+**Exam tip:** If a workload is flexible, interruptible, and cost-sensitive, consider Spot Instances.
+
+**
+
+---
+### Question 25 — CLF-C02 Exam Practice
+
+A company runs a business-critical application on Amazon EC2. Its workload is predictable and will run continuously for the next three years. The company wants to reduce compute costs compared with On-Demand pricing.
+
+Which option is the best fit?
+
+**A.** Spot Instances, because they always provide the lowest cost without interruption.
+
+**B.** On-Demand Instances, because they require a three-year commitment.
+
+**C.** Reserved Instances, because the company has predictable long-term usage.
+
+**D.** Dedicated Hosts, because they automatically scale based on demand.
+
+**Your answer:** C. Reserved Instances, because the company has predictable long-term usage.
+
+**Correct answer:** C. Reserved Instances
+
+**Result:** Correct
+
+#### Notes
+
+- **Reserved Instances:** Can provide discounted pricing for predictable EC2 usage in exchange for a commitment.
+- **On-Demand Instances:** Provide flexible usage without a long-term commitment.
+- **Spot Instances:** Use spare capacity at discounted prices but can be interrupted.
+- **Dedicated Hosts:** Provide physical servers dedicated to one customer; they do not automatically scale based on demand.
+
+**Exam tip:** Predictable long-term usage → consider Reserved Instances. Flexible usage → On-Demand. Interruptible, cost-sensitive workloads → Spot.
+
+**Important distinction:** Reserved Instances are a billing commitment, not a guarantee that an instance will automatically scale or that capacity will always be available in every configuration.
